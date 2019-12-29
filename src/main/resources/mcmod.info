@@ -1,0 +1,10 @@
+[
+  {
+    "modid": "estfuture",
+    "name": "EverNife's Ets Future",
+    "description": "EverNife's Ets Future é um mod criado para a rede FinalCraft",
+    "version": "${version}",
+    "mcversion": "1.7.10",
+    "authorList": ["EverNife"]
+  }
+]
