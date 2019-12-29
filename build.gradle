@@ -20,7 +20,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "1.1.2"
+version = "1.0.1a"
 archivesBaseName = "EstFuture-[1.7.10]"
 
 group 'br.com.finalcraft'

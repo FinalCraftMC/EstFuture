@@ -1,5 +1,5 @@
 # Creative Tab
-itemGroup.estfuture=Et Futurum
+itemGroup.estfuture=Est Future
 
 # Enchantments
 enchantment.frost_walker=Frost Walker
@@ -200,27 +200,40 @@ tile.estfuture.log2_stripped_4.name=Stripped Acacia Log
 tile.estfuture.log2_stripped_5.name=Stripped Dark Oak Log
 tile.estfuture.log2_stripped_8.name=Stripped Acacia Log
 tile.estfuture.log2_stripped_9.name=Stripped Dark Oak Log
-#
 
-#tile.estfuture.glazedTerracottaWhite.name=White Glazed Terracotta
-#tile.estfuture.glazedTerracottaOrange.name=Orange Glazed Terracotta
-#tile.estfuture.glazedTerracottaMagenta.name=Magenta Glazed Terracotta
-#tile.estfuture.glazedTerracottaLightBlue.name=Light Blue Glazed Terracotta
-#tile.estfuture.glazedTerracottaYellow.name=Yellow Glazed Terracotta
-#tile.estfuture.glazedTerracottaLime.name=Lime Glazed Terracotta
-#tile.estfuture.glazedTerracottaPink.name=Pink Glazed Terracotta
-#tile.estfuture.glazedTerracottaGray.name=Gray Glazed Terracotta
-#tile.estfuture.glazedTerracottaSilver.name=Light Gray Glazed Terracotta
-#tile.estfuture.glazedTerracottaCyan.name=Cyan Glazed Terracotta
-#tile.estfuture.glazedTerracottaPurple.name=Purple Glazed Terracotta
-#tile.estfuture.glazedTerracottaBlue.name=Blue Glazed Terracotta
-#tile.estfuture.glazedTerracottaBrown.name=Brown Glazed Terracotta
-#tile.estfuture.glazedTerracottaGreen.name=Green Glazed Terracotta
-#tile.estfuture.glazedTerracottaRed.name=Red Glazed Terracotta
-#tile.estfuture.glazedTerracottaBlack.name=Black Glazed Terracotta
 
-tile.concrete_powder.name=%s Concrete Powder
-tile.concrete.name=%s Concrete
+tile.estfuture.concrete_black.name=Black Concrete
+tile.estfuture.concrete_red.name=Red Concrete
+tile.estfuture.concrete_green.name=Green Concrete
+tile.estfuture.concrete_brown.name=Brown Concrete
+tile.estfuture.concrete_blue.name=Blue Concrete
+tile.estfuture.concrete_purple.name=Purple Concrete
+tile.estfuture.concrete_cyan.name=Cyan Concrete
+tile.estfuture.concrete_silver.name=Light Gray Concrete
+tile.estfuture.concrete_gray.name=Gray Concrete
+tile.estfuture.concrete_pink.name=Pink Concrete
+tile.estfuture.concrete_lime.name=Lime Concrete
+tile.estfuture.concrete_yellow.name=Yellow Concrete
+tile.estfuture.concrete_lightBlue.name=Light Blue Concrete
+tile.estfuture.concrete_magenta.name=Magenta Concrete
+tile.estfuture.concrete_orange.name=Orange Concrete
+tile.estfuture.concrete_white.name=White Concrete
+tile.estfuture.concrete_powder_black.name=Black Concrete Powder
+tile.estfuture.concrete_powder_red.name=Red Concrete Powder
+tile.estfuture.concrete_powder_green.name=Green Concrete Powder
+tile.estfuture.concrete_powder_brown.name=Brown Concrete Powder
+tile.estfuture.concrete_powder_blue.name=Blue Concrete Powder
+tile.estfuture.concrete_powder_purple.name=Purple Concrete Powder
+tile.estfuture.concrete_powder_cyan.name=Cyan Concrete Powder
+tile.estfuture.concrete_powder_silver.name=Light Gray Concrete Powder
+tile.estfuture.concrete_powder_gray.name=Gray Concrete Powder
+tile.estfuture.concrete_powder_pink.name=Pink Concrete Powder
+tile.estfuture.concrete_powder_lime.name=Lime Concrete Powder
+tile.estfuture.concrete_powder_yellow.name=Yellow Concrete Powder
+tile.estfuture.concrete_powder_lightBlue.name=Light Blue Concrete Powder
+tile.estfuture.concrete_powder_magenta.name=Magenta Concrete Powder
+tile.estfuture.concrete_powder_orange.name=Orange Concrete Powder
+tile.estfuture.concrete_powder_white.name=White Concrete Powder
 
 color.white=White
 color.orange=Orange

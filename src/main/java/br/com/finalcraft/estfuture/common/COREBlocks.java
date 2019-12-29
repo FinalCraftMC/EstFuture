@@ -33,7 +33,8 @@ public final class COREBlocks {
     public static final Block redNB = new RedNetherBrick();
     public static final Block netherwart = new NetherwartBlock();
 
-    //public static final Block concrete = new ConcreteBlock();
+    public static final Block concrete = new BlockConcrete();
+    public static final Block concrete_powder = new BlockConcretePowder();
 
     //do prismarine slab/stairs
     public static final Block prismarineStairsRough = new BlockPrismarineStairs(prismarine, 0).setBlockName("prismarine_stairs");
@@ -77,8 +78,6 @@ public final class COREBlocks {
     }
 
     public static final void init() {
-
-        ConcreteRegistry.init();
 
         try {
             for (Field f : COREBlocks.class.getDeclaredFields()) {

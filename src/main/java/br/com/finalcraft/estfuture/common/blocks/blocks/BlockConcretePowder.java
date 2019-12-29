@@ -1,62 +1,41 @@
 package br.com.finalcraft.estfuture.common.blocks.blocks;
 
 import br.com.finalcraft.estfuture.EstFuture;
+import br.com.finalcraft.estfuture.common.COREBlocks;
 import br.com.finalcraft.estfuture.common.entities.EntityFallingConcrete;
+import br.com.finalcraft.estfuture.common.items.block.ItemBlockConcretePowder;
 import br.com.finalcraft.estfuture.common.utils.EnumDyeColor;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.item.EntityFallingBlock;
 import net.minecraft.init.Blocks;
-import net.minecraft.world.IBlockAccess;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.IIcon;
 import net.minecraft.world.World;
 
+import java.util.List;
 import java.util.Random;
 
-public class BlockConcretePowder extends BlockFalling {
+public class BlockConcretePowder extends BlockFalling implements COREBlocks.ISubBlocksBlock{
 
-	private EnumDyeColor color;
-	
-	public BlockConcretePowder(EnumDyeColor color) {
+	private int nIcons = EnumDyeColor.values().length;
+	public IIcon[] icons = new IIcon[nIcons];
+
+	public BlockConcretePowder() {
 		super(Material.sand);
-		this.color = color;
-		this.setBlockName("estfuture.concrete_powder_" + this.color);
+		this.setBlockName("estfuture.concrete_powder");
 		this.setStepSound(soundTypeSand);
 		this.setCreativeTab(EstFuture.tabBlocksItems);
 		this.setHardness(0.5F);
 		this.setResistance(2.5F);
-		this.setBlockTextureName("concrete_powder_" + this.color.getName());
+		this.setBlockTextureName("concrete_powder");
 	}
-	
-	public void onBlockAdded(World worldIn, int x, int y, int z) {
-		if( worldIn.getBlock(x + 1, y, z).getMaterial() == Material.water
-		|| worldIn.getBlock(x - 1, y, z).getMaterial() == Material.water
-		|| worldIn.getBlock(x, y, z + 1).getMaterial() == Material.water
-		|| worldIn.getBlock(x, y, z - 1).getMaterial() == Material.water
-		|| worldIn.getBlock(x, y + 1, z).getMaterial() == Material.water
-		|| worldIn.getBlock(x, y - 1, z).getMaterial() == Material.water ){
-			worldIn.setBlock(x, y, z, ConcreteRegistry.getSolidFromDye(this.color));
-		} else {
-			worldIn.scheduleBlockUpdate(x, y, z, this, this.tickRate(worldIn));
-		}
-	}
-	
-	public void onNeighborChanged(IBlockAccess blkAcc, int x, int y, int z, int tileX, int tileY, int tileZ) {
-		if(blkAcc instanceof World){
-			World worldIn = (World) blkAcc;
-			if( worldIn.getBlock(x + 1, y, z).getMaterial() == Material.water
-			|| worldIn.getBlock(x - 1, y, z).getMaterial() == Material.water
-			|| worldIn.getBlock(x, y, z + 1).getMaterial() == Material.water
-			|| worldIn.getBlock(x, y, z - 1).getMaterial() == Material.water
-			|| worldIn.getBlock(x, y + 1, z).getMaterial() == Material.water
-			|| worldIn.getBlock(x, y - 1, z).getMaterial() == Material.water ){
-				worldIn.setBlock(x, y, z, ConcreteRegistry.getSolidFromDye(this.color));
-			} else {
-				worldIn.scheduleBlockUpdate(x, y, z, this, this.tickRate(worldIn));
-			}
-		}
-	}
-	
+
 	public void updateTick(World worldIn, int x, int y, int z, Random rand) {
 		if(!worldIn.isRemote) {
 			this.func_149830_m(worldIn, x, y, z);
@@ -97,8 +76,34 @@ public class BlockConcretePowder extends BlockFalling {
 	
 	public void onEndFalling(World worldIn, int x, int y, int z){}
 
-	public EnumDyeColor getColor() {
-		return this.color;
+	@Override
+	public IIcon getIcon(int side, int meta) {
+		if (meta >= nIcons)
+			meta = 0;
+		return this.icons[meta];
 	}
 
+	@Override
+	public void registerBlockIcons(IIconRegister reg) {
+		for (int i = 0; i < nIcons; i ++) {
+			this.icons[i] = reg.registerIcon(this.textureName + "_" + EnumDyeColor.byMetadata(i).getName());
+		}
+	}
+
+	@Override
+	public int damageDropped(int meta) {
+		return meta;
+	}
+
+	@Override
+	public void getSubBlocks(Item item, CreativeTabs tab, List list) {
+		for (int i = 0; i < nIcons; i ++) {
+			list.add(new ItemStack(item, 1, i));
+		}
+	}
+
+	@Override
+	public Class<? extends ItemBlock> getItemBlockClass() {
+		return ItemBlockConcretePowder.class;
+	}
 }

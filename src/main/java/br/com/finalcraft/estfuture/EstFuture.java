@@ -18,7 +18,7 @@ import org.apache.logging.log4j.Logger;
         version = Reference.VERSION_NUMBER)
 public class EstFuture {
 
-    public static CreativeTabs tabBlocksItems = new EFCreativeTab(CreativeTabs.getNextID(), Reference.MOD_ID, "itemGroup.estfuture");
+    public static CreativeTabs tabBlocksItems = new EFCreativeTab(CreativeTabs.getNextID(), Reference.MOD_ID, "estfuture");
 
     public static Logger logger;
     @Instance
